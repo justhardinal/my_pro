@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Community</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+             
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="/css/admin.css"/>
+        <link rel="stylesheet" href="/css/jquery-ui.css"/>
+                
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        
+        <script src="/js/jquery.js"></script>
+        <script src="/js/jquery-ui.js"></script>
+        
+        <!-- online
+            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"/>
+        -->
+        <script>
+        $(function() {
+        $( "#datepicker" ).datepicker(
+          {
+            dateFormat: 'yy-mm-dd'
+          });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        <!-- Fixed navbar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="edit.html" th:href="@{/}">Career Community</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="edit.html" th:href="@{/}">Home</a></li>                            
+                            <li class="active"><a href="edit.html" th:href="@{/member/list}">Member</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" th:href="@{/member/add}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="login.html" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+            <div class="container">
+                <!-- Main component for a primary marketing message or call to action -->
+                <div class="panel-body">
+                    <div th:replace="${view} :: content"> Content</div>
+                </div>
+            </div>
+            <ul class="navbar navbar-nav navbar-right navbar-inverse navbar-fixed-bottom ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Copyright &copy; 2016 Hardinal </a>
+                    </div>
+                   
+                </div>
+            </ul>
+        </div>
+    </body>
+</html>
