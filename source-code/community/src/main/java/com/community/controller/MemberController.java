@@ -52,7 +52,7 @@ public class MemberController {
                 mdl.addAttribute("member", m);
             }
         }
-        return "/member/view";
+        return "member/view";
     }
     
     @RequestMapping(value = "/edit{id}", method = RequestMethod.GET)
@@ -66,7 +66,7 @@ public class MemberController {
                 mdl.addAttribute("member", m);
             }
         }
-        return "/member/edit";
+        return "member/edit";
     }
     
     @RequestMapping(value = "/edit{id}", method = RequestMethod.POST)
@@ -74,7 +74,7 @@ public class MemberController {
             @Valid Member m,
             BindingResult error) {
         if (error.hasErrors()) {
-            return "/member/edit";
+            return "member/edit";
         }
         m.setId(id);
         md.save(m);
@@ -84,13 +84,13 @@ public class MemberController {
     
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String addForm(Member member) {
-        return "/member/create";
+        return "member/create";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String addProsesForm(@Valid Member m, BindingResult error) {
         if (error.hasErrors()) {
-            return "/member/create";
+            return "member/create";
         }
 
         md.save(m);
