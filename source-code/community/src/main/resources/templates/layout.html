@@ -4,7 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Community</title>
         <meta charset="UTF-8"/>
@@ -56,13 +57,13 @@ and open the template in the editor.
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="edit.html" th:href="@{/}">Home</a></li>                            
-                            <li class="active"><a href="edit.html" th:href="@{/member/list}">Member</a></li>
+                            <li class="active"><a href="list.html" th:href="@{/member/list}">Member</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
                             
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#" th:href="@{/member/add}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="add.html" th:href="@{/member/create}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                             <li><a href="login.html" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->

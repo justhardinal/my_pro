@@ -41,11 +41,6 @@ public class MemberController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String registerForm(Member member) {
-        return "register";
-    }
-    
     @RequestMapping(value = "/view{id}", method = RequestMethod.GET)
     public String viewForm(@RequestParam(value = "id") String id, 
             Model mdl){
@@ -87,15 +82,15 @@ public class MemberController {
     }
     
     
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String addForm(Member member) {
-        return "/member/add";
+        return "/member/create";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addProsesForm(@Valid Member m, BindingResult error) {
         if (error.hasErrors()) {
-            return "/member/add";
+            return "/member/create";
         }
 
         md.save(m);
