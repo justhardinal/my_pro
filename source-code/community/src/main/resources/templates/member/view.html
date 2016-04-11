@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Member</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Register For Member</h1>
+        <div class="container" th:fragment="content">
+        <form action="#" th:action="@{/member/view}" th:object="${member}" method="post">
+            <table class="table table-condensed table-striped table-responsive ">
+                <tbody>
+                    <tr>
+                        <td>Fullname</td>
+                        <td th:text="*{fullname}">fullname</td>
+                    </tr>
+                    <tr>
+                        <td>Nickname</td>
+                        <td th:text="*{nickname}">nickname </td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate</td>
+                        <td th:text="*{birthdate}">birthdate</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td th:text="*{phoneno}">phone Number </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td th:text="*{email}">email</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td th:text="*{address}">Address</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="list.html" th:href="@{/member/list}">
+                                Return
+                            </a>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+        </div>
+    </body>
+</html>

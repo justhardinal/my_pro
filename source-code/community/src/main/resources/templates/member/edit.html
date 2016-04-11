@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Member</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Edit Data Member</h1>
+        <div class="container" th:fragment="content">
+        <form action="#" th:action="@{/member/edit}" th:object="${member}" method="post">
+            
+            <table class="table table-condensed table-striped table-responsive ">
+                <tbody>
+                <tr>
+                    <td><input type="hidden" th:field="*{id}" /></td>
+                </tr>
+                <tr>
+                    <td>Fullname</td>
+                    <td><input type="text" th:field="*{fullname}" /> </td>
+                    <td th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></td>
+                </tr>
+                <tr>
+                    <td>Nickname</td>
+                    <td><input type="text" th:field="*{nickname}" /> </td>
+                    <td th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></td>
+                </tr>
+                <tr>
+                    <td>Birthdate</td>
+                    <td><input type="text" th:field="*{birthdate}" /> </td>
+                    <td th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="text" th:field="*{phoneno}" /> </td>
+                    <td th:if="${#fields.hasErrors('phoneno')}" th:errors="*{phoneno}"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" th:field="*{email}" /> </td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" th:field="*{address}" /> </td>
+                    <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Simpan"/></td>
+                    <td><a href="list.html" class="btn btn-info" role="button" th:href="@{/member/list}">Return</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </form>
+        </div>
+    </body>
+</html>
