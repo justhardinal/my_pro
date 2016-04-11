@@ -53,10 +53,9 @@
                 <dependency>
                     <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
-                    <version>9.4.1207</version>
-                    <scope>runtime</scope>
+                    <version>9.4.1208.jre7</version>
                 </dependency>
-	</dependencies>
+        </dependencies>
 	
 	<build>
 		<plugins>
