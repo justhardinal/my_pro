@@ -20,7 +20,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../static/css/jquery-ui.css" type="text/css"
               th:href="@{/css/jquery-ui.css}" media="screen"/>
         <link rel="stylesheet" href="../static/css/bootstrap.css" type="text/css"
-              th:href="@{/css/bootstrap.css}" media="screen" />           
+              th:href="@{/css/bootstrap.css}" media="screen" />                   
        
     </head>
     <body>
@@ -61,11 +61,16 @@ and open the template in the editor.
             <p>Copyright &copy; 2016 Hardinal </p>		
         </footer>
 
-            
     </body>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>       
     <script src="/js/jquery-ui.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ 
+                selector:'textarea'
+                });
+    </script>
+    
     <script>
     $(function() {
     $( "#datepicker" ).datepicker(
@@ -74,5 +79,7 @@ and open the template in the editor.
         defaultDate:'1980-01-01'
       });
     });
+    
     </script>
+    
 </html>

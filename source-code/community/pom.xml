@@ -55,6 +55,11 @@
                     <artifactId>postgresql</artifactId>
                     <version>9.4.1208.jre7</version>
                 </dependency>
+                <dependency>
+                    <groupId>com.ckeditor</groupId>
+                    <artifactId>ckeditor-java-core</artifactId>
+                    <version>3.5.3</version>
+                </dependency>
         </dependencies>
 	
 	<build>

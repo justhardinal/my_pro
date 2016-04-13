@@ -56,7 +56,7 @@ and open the template in the editor.
                     <div class="form-group">
                         <label for ="address" class="control-label col-sm-2">Address : </label>
                         <div class="col-sm-6">
-                            <textarea id="editor" name="address" placeholder="Enter Your Address" rows="6" class="form-control" th:field="*{address}"> </textarea>
+                            <textarea id="address" name="address" placeholder="Enter Your Address" rows="6" class="form-control" th:field="*{address}"> </textarea>
                         </div> 
                         <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
                     </div>
@@ -73,8 +73,8 @@ and open the template in the editor.
                             <a href="list.html" class="btn btn-default" role="button" th:href="@{/member/list}">Return</a>
                         </div>
                     </div>
-                </form>
+                </form>                
             </div>
-        </div>
+        </div>       
     </body>
 </html>
