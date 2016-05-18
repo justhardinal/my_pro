@@ -12,47 +12,56 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h1>Register For Member</h1>
+        <h1>Member Profile</h1>
         <div class="container" th:fragment="content">
-        <form action="#" th:action="@{/member/view}" th:object="${member}" method="post">
-            <table class="table table-condensed table-striped table-responsive ">
-                <tbody>
-                    <tr>
-                        <td>Fullname</td>
-                        <td th:text="*{fullname}">fullname</td>
-                    </tr>
-                    <tr>
-                        <td>Nickname</td>
-                        <td th:text="*{nickname}">nickname </td>
-                    </tr>
-                    <tr>
-                        <td>Birthdate</td>
-                        <td th:text="*{birthdate}">birthdate</td>
-                    </tr>
-                    <tr>
-                        <td>Phone Number</td>
-                        <td th:text="*{phoneno}">phone Number </td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td th:text="*{email}">email</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td th:text="*{address}">Address</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="list.html" th:href="@{/member/list}">
-                                Return
-                            </a>
-                        </td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="panel panel-default">
+                <form class="form-horizontal"  action="#" th:action="@{/member/view}" th:object="${member}" method="post">
+                    <div class="form-group"><input type="hidden" th:field="*{id}" /></div>
+                    <div class="form-group">
+                        <label for ="fullname" class="control-label col-sm-2">Full Name : </label>
+                        <div class="col-sm-6">
+                            <input type="text" placeholder="Enter Your Fullname" class="form-control" th:field="*{fullname}" />
+                        </div>
+                        <div th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="nickname" class="control-label col-sm-2">Nickname : </label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Enter Your Nickname" class="form-control" th:field="*{nickname}" /> 
+                        </div>
+                        <div th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="birthdate" class="control-label col-sm-2">Birthdate : </label>
+                        <div class="col-sm-4">
+                            <input type="text" id="datepicker" placeholder="Enter Your Birthdate years-month-date(1988-03-12)" class="form-control" th:field="*{birthdate}" /> 
+                        </div> 
+                        <div th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="phoneno" class="control-label col-sm-2">Phone No : </label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Enter Your Active Phone Number" class="form-control" th:field="*{phoneno}" /> 
+                        </div> 
+                        <div th:if="${#fields.hasErrors('phoneno')}" th:errors="*{phoneno}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="email" class="control-label col-sm-2">Email : </label>
+                        <div class="col-sm-6">
+                            <input type="text" placeholder="Enter Your Valid Email" class="form-control" th:field="*{email}" /> 
+                        </div> 
+                        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="address" class="control-label col-sm-2">Address : </label>
+                        <div class="col-sm-6">
+                            <input type="text" placeholder="address" class="form-control" th:field="*{address}" />
+                        </div> 
+                        <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+                    </div>
 
-        </form>
+                </form>
+            </div>
         </div>
     </body>
 </html>

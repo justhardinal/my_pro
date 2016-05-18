@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Article List</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div class="container" th:fragment="content">
+            <h1>List Of Article</h1>
+            <table class="table table-condensed table-striped table-responsive ">
+                <thead>
+                    <div class="col-sm-2">
+                        <a href="addarticle.html" class="btn btn-info" role="button" th:href="@{/article/addarticle}">Add New</a>
+                    </div>
+                    <tr>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Post Create</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <form>
+                        <tr th:each ="a :${listArticle}">
+                            <td th:text ="${a.title}">Hardinal Fahmi</td>
+                            <td th:text ="${a.content}">Hardinal</td>
+                            <td th:text ="${a.createdOn}">hardinal.fahmi@gmail.com</td>
+                            <td>
+                                <a href="updatearticle.html" th:href="@{/article/updatearticle(id=${a.id})}">
+                                    Edit
+                                </a>|
+                                <a href="viewarticle.html" th:href="@{/article/viewarticle(id=${a.id})}">
+                                    View
+                                </a>|
+                                <a href="form.html" th:href="@{/article/deletearticle(id=${a.id})}">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+</html>
