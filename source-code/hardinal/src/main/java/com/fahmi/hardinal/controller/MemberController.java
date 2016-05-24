@@ -30,18 +30,18 @@ public class MemberController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
     
-    @RequestMapping("/list")
+    @RequestMapping("/listmember")
     public void listMember(Model mdl) {
         mdl.addAttribute("listMember", md.findAll());
     }
     
-    @RequestMapping("/delete")
+    @RequestMapping("/deletemember")
     public String hapus(@RequestParam(value = "id") String id) {
         md.delete(id);
-        return "redirect:list";
+        return "redirect:listmember";
     }
 
-    @RequestMapping(value = "/view{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/viewmember{id}", method = RequestMethod.GET)
     public String viewForm(@RequestParam(value = "id") String id, 
             Model mdl){
         mdl.addAttribute("member",new Member());
@@ -52,10 +52,10 @@ public class MemberController {
                 mdl.addAttribute("member", m);
             }
         }
-        return "member/view";
+        return "member/viewmember";
     }
     
-    @RequestMapping(value = "/edit{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editmember{id}", method = RequestMethod.GET)
     public String editForm(@RequestParam(value = "id") String id, 
             Model mdl){
         mdl.addAttribute("member",new Member());
@@ -66,35 +66,35 @@ public class MemberController {
                 mdl.addAttribute("member", m);
             }
         }
-        return "member/edit";
+        return "member/editmember";
     }
     
-    @RequestMapping(value = "/edit{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/editmember{id}", method = RequestMethod.POST)
     public String prosesUpdateForm(@RequestParam(value = "id") String id,
             @Valid Member m,
             BindingResult error) {
         if (error.hasErrors()) {
-            return "member/edit";
+            return "member/editmember";
         }
         m.setId(id);
         md.save(m);
-        return "redirect:list";
+        return "redirect:listmember";
     }
     
     
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    @RequestMapping(value = "/addmember", method = RequestMethod.GET)
     public String addForm(Member member) {
-        return "member/create";
+        return "member/addmember";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/addmember", method = RequestMethod.POST)
     public String addProsesForm(@Valid Member m, BindingResult error) {
         if (error.hasErrors()) {
-            return "member/create";
+            return "member/addmember";
         }
 
         md.save(m);
-        return "redirect:list";
+        return "redirect:listmember";
     }
     
     

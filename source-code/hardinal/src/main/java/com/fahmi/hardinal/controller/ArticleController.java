@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -32,6 +33,13 @@ public class ArticleController {
     @Autowired
     ArticleDao ad;
           
+    @InitBinder //convert date 
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        dateFormat.setLenient(false);
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+    }
+    
     @RequestMapping("/listarticle")
     public void listArticle(Model mdl) {
         mdl.addAttribute("listArticle", ad.findAll());
@@ -88,7 +96,7 @@ public class ArticleController {
     public String addForm(Article article) {
         return "article/addarticle";
     }
-
+        
     @RequestMapping(value = "/addarticle", method = RequestMethod.POST)
     public String addProsesForm(@Valid Article a, BindingResult error) {
         if (error.hasErrors()) {

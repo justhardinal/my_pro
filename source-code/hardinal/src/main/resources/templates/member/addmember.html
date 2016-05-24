@@ -14,7 +14,7 @@ and open the template in the editor.
         <div class="container" th:fragment="content">
             <legend>Member Registration Form </legend>
             <div class="panel panel-default">
-                <form class="form-horizontal" role="form" action="#" th:action="@{/member/create}" th:object="${member}" 
+                <form class="form-horizontal" role="form" action="#" th:action="@{/member/addmember}" th:object="${member}" 
                       method="post">
 
                     <div class="form-group"><input type="hidden" th:field="*{id}" /></div>
@@ -70,7 +70,7 @@ and open the template in the editor.
                     <div class="form-group">
                         <div class="container-fluid bg-2 text-center">
                             <input type="submit" class="btn btn-default" value="Save" />
-                            <a href="list.html" class="btn btn-default" role="button" th:href="@{/member/list}">Return</a>
+                            <a href="listmember.html" class="btn btn-default" role="button" th:href="@{/member/listmember}">Return</a>
                         </div>
                     </div>
                 </form>                

@@ -13,10 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  *
@@ -29,10 +28,9 @@ public class Article {
     @GenericGenerator(name="uuid", strategy = "uuid2")
     private String id;
     
-    @Column(nullable = false)
-    //@NotEmpty    
+    @Column(name = "created_on", nullable = false)
+    @NotNull    
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date CreatedOn;
     
     @Column(nullable = false)

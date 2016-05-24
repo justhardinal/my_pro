@@ -17,7 +17,7 @@ and open the template in the editor.
             <table class="table table-condensed table-striped table-responsive ">
                 <thead>
                     <div class="col-sm-2">
-                        <a href="create.html" class="btn btn-info" role="button" th:href="@{/member/create}">Add New</a>
+                        <a href="addmember.html" class="btn btn-info" role="button" th:href="@{/member/addmember}">Add New</a>
                     </div>
                     <tr>
                         <th>Full Name</th>
@@ -39,13 +39,13 @@ and open the template in the editor.
                             <td th:text ="${m.phoneno}">08097967</td>
                             <td th:text ="${m.birthdate}">1986-05-02</td>
                             <td>
-                                <a href="edit.html" th:href="@{/member/edit(id=${m.id})}">
+                                <a href="editmember.html" th:href="@{/member/editmember(id=${m.id})}">
                                     Edit
                                 </a>|
-                                <a href="view.html" th:href="@{/member/view(id=${m.id})}">
+                                <a href="viewmember.html" th:href="@{/member/viewmember(id=${m.id})}">
                                     View
                                 </a>|
-                                <a href="form.html" th:href="@{/member/delete(id=${m.id})}">
+                                <a href="form.html" th:href="@{/member/deletemember(id=${m.id})}">
                                     Delete
                                 </a>
                             </td>
